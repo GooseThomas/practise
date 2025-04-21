@@ -1,7 +1,7 @@
 import {AfterViewInit, Component, ElementRef, inject, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {RouterLink, RouterLinkActive, RouterOutlet} from '@angular/router';
-import { NgIf, NgForOf} from '@angular/common';
 import { RouterModule } from '@angular/router';
+import {CommonModule} from '@angular/common';
 
 export interface Menu{
   perm: string
@@ -30,9 +30,9 @@ export const Mnu:Menu[]=[
 @Component({
   selector: 'app-site-layout-component',
   standalone: true,
-  imports: [NgIf, NgForOf, RouterModule, RouterLinkActive,RouterLink,RouterOutlet],
   templateUrl: './site-layout.component.html',
-  styleUrl: './site-layout.component.scss'
+  styleUrl: './site-layout.component.scss',
+  imports: [ CommonModule  ]
 })
 
 export class SiteLayoutComponent {
