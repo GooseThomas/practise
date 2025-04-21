@@ -1,0 +1,24 @@
+.container {border: solid 0px #1976d2;
+  padding: 10px;float: left;margin: 62px 0 0 16px;height: 93vh; display: flex;}
+body { margin:0;}
+nav { margin: 0; height: 62px; }
+nav > a > svg {margin-top: 3px;height:50px;float:left;}
+nav > a > h1 {color: #ffffff; margin-top:auto;}
+li {cursor:pointer; font-size: 30px;list-style-type: none;}
+.container > div {display: flex; flex-direction: column;}
+.fltr {background: #d8fdc9; opacity: 0.2; width: 300px;height: 60px; position: fixed;left: 160px;top: 61px;width: 1266px;}
+.fltr:hover {opacity: 1; color: #000;}
+.active {background: #348408 !important;color: #fff;}
+.leftmenu button {text-transform: none;
+  border-radius: 8px;
+  border: solid 1px #73af53;
+  margin-top: 9px;
+  background: #f2f7b0cf;
+  line-height: 1.3rem;
+  min-height: 3.2rem;
+  padding: 5px 0;
+  width: 13rem;
+  font-size: 1.3rem;
+  font-weight: 500;
+  -webkit-box-shadow: 4px 4px 8px 0px #000;
+  box-shadow: 5px 5px 1px 0px #91ff55;}
