@@ -1,4 +1,7 @@
 import {Component, OnInit} from '@angular/core';
+import {GuardServices} from '../services/guard.services';
+import {loog} from "../services/functions.service";
+const log = loog('██-PL-SERV-██');
 
 @Component({
   selector: 'app-guard-component',
@@ -7,8 +10,9 @@ import {Component, OnInit} from '@angular/core';
   styleUrl: './guard.component.scss'
 })
 export class GuardComponent implements OnInit  {
-
+ constructor(){log('')}
   ngOnInit() {
+    GuardServices.list();
   }
 }
 

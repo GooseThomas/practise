@@ -1,13 +1,14 @@
-<ng-template #logo let-title="title" let-href="href" >
+<ng-template #logo  let-href="href" >
 <h1 style="float: left;margin-left:10px;"> {{title}}</h1>
 </ng-template>  <!-- logo   -->
-<ng-template #menu let-mnu="menu">
+<ng-template #menu >
+  <p>Меню</p>
   <div class="leftmenu">
     <ng-container *ngFor="let z of mnu">
       <hr *ngIf="z.href=='-'">
-      <button *ngIf="z.title!==''" routerLinkActive="active" routerLink="z.href"
-
-      >{{z.title}}</button>
+      <button *ngIf="z.title!==''" routerLinkActive="active" routerLink="z.href">
+        {{z.title}}
+      </button>
     </ng-container>
   </div>
 </ng-template>  <!-- Menu   -->
@@ -18,7 +19,6 @@
 
   <p class="err" *ngIf="err">Ошибка авторизации. У вас недостаточно прав, либо вы не авторизовались.</p>
   <div class="card"> Card </div>
-
-
+  <router-outlet></router-outlet>
 </div>
 

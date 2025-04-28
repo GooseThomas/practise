@@ -1,6 +1,6 @@
 import {AfterViewInit, Component, ElementRef, inject, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {RouterLink, RouterLinkActive, RouterOutlet} from '@angular/router';
-import { RouterModule } from '@angular/router';
+import { RouterModule} from '@angular/router';
 import {CommonModule} from '@angular/common';
 
 export interface Menu{
@@ -32,10 +32,11 @@ export const Mnu:Menu[]=[
   standalone: true,
   templateUrl: './site-layout.component.html',
   styleUrl: './site-layout.component.scss',
-  imports: [ CommonModule  ]
+  imports: [ CommonModule , RouterLink, RouterLinkActive,RouterModule ]
 })
 
 export class SiteLayoutComponent {
   err = false;
   mnu=Mnu
+  title = 'ARM - охраны '
 }
