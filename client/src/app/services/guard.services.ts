@@ -6,11 +6,9 @@ const log = loog('██-PL-SERV-██');
 
 @Injectable({ providedIn: "root" })
 export class GuardServices {
-  constructor(http : httpClient) {}
+  constructor(private http : HttpClient) {}
 
-  list():       Observable<string[]>  { return this.http.get<string>   ('/api/info')      }
+  list():       Observable<[]>     { return this.http.get<[]>      ('/api/info')   }
+  time(d:any):  Observable<string> { return this.http.post<string> ('/api/time',d) }
 
-  static list() {
-
-  }
 }

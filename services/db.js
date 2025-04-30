@@ -25,8 +25,7 @@ module.exports = {
         try { oracledb.autoCommit = true ;
             oracledb.initOracleClient()
             connection =  await oracledb.getConnection(key);
-            const result = await connection.execute(l)
-            return result
+            return await connection.execute(l)
         } catch (err){ console.error(err); return null;} finally {
             if(connection){ try{await connection.close()}catch (err){console.error(err)} }
         }

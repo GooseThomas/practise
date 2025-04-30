@@ -19,6 +19,28 @@ module.exports.info      = async function (req,res) {
    // res.status(200).json({time:dd})
 }
 
+module.exports.time      = async function (req,res) {
+    const row = {came:'TM_CAME',arrived:'TM_ARRIVED'}
+    let barcod = req.body.barcod,
+        event  = req.body.event,
+        tm = new Date().getTime(),
+        SQ_POST_TIME = `UPDATE TESTER.LOGS_GRD SET ${row[event]}='${tm}' where BARCODE='${barcod}'`;
+        log('SQ_POST_TIME',SQ_POST_TIME)
+    if(row[event]) {
+        c.RUN(c.KEY,SQ_POST_TIME).then(t=>{
+            log('#SQ_POST_TIME');
+            log(c.META(t));
+            res.status(200).json(c.META(t,false))
+        })
+    }
+
+    log('time',barcod,event)
+
+
+    res.status(200).json({res:'ok'})
+}
+
+
 function list(x){
     if(x===[] || x===undefined || x[0]===undefined) return;
     let  l=0,h=Object.keys(x[0]), // массив заголовков

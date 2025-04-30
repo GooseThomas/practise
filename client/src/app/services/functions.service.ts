@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+let module='';
 
 @Injectable({ providedIn: 'root'})
 export class FunctionsService {

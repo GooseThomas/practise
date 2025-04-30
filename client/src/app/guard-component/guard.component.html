@@ -1,9 +1,30 @@
 <h1>Home page Guard-component</h1>
 
 <div>
-  <!--<a href="/print" target="_blank">page link</a><button class="btn" >Go to Posts</button>-->
 
+  <label for="journal">Номер журнала</label>
+  <input
+    type="text"
+    id="journal"
+    name="journal"
+    #jour
+    placeholder="Введите номер в журнале"
+    value = '67834'
+  >
 
-  <h2 >open</h2>
-  <h2 >close</h2>
+  <table>
+    <tr><th>№</th><th>КОД</th><th>Направление</th><th>Старт</th><th>пришел</th><th>ушел</th><th>финиш</th></tr>
+    <tr *ngFor=" let cart of carts; index as i">
+      <td> {{ i+1 }}          </td>
+      <td> {{ cart['barcode'] }} </td>
+      <td> {{ cart['direction'] }} </td>
+      <td> {{ todate(cart['tm_came']) }} </td>
+      <td> {{ todate(cart['tm_arrived']) }} </td>
+      <td> {{ todate(cart['tm_leave']) }} </td>
+      <td> {{ todate(cart['tm_left']) }} </td>
+
+    </tr>
+  </table>
+  <p>{{reader}}</p>
+
 </div>
