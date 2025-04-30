@@ -1,0 +1,35 @@
+<h1>интернет магазин</h1>
+
+<div>
+   <input
+    type="text"
+    id="nam"
+    name="nam"
+    #nam
+    placeholder="Название места"
+    value = 'Интернет магазин'
+  >
+  <br/><br/>
+  <textarea for="nam"></textarea>
+  <br/><br/>
+  <table>
+    <tr><th></th></tr>
+    <tr *ngFor=" let cart of carts; index as i">
+      <td> {{ i+1 }}          </td>
+      <td> {{ cart['barcode'] }} </td>
+      <td> {{ cart['direction'] }} </td>
+      <td> {{ todate(cart['tm_came']) }} </td>
+      <td> {{ todate(cart['tm_arrived']) }} </td>
+      <td> {{ todate(cart['tm_leave']) }} </td>
+      <td> {{ todate(cart['tm_left']) }} </td>
+
+    </tr>
+  </table>
+  <table>
+
+
+
+  </table>
+  <p>{{reader}}</p>
+
+</div>
